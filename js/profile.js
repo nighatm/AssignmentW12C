@@ -1,4 +1,3 @@
-
 let loggedInUser = Cookies.get("useremail");
 let tokenUser = Cookies.get("usertoken");
 
@@ -13,8 +12,10 @@ if (loggedInUser == undefined) {
 } else {
     document.getElementById("welcome").innerHTML = "Welcome :  " + '"' + loggedInUser + '"';
     document.getElementById("line").innerHTML = "----------------------------------------------";
+    colorsShow();
 }
 
+function colorsShow(){
 let ajax = new XMLHttpRequest();
 ajax.onreadystatechange = function () {
 
@@ -48,10 +49,12 @@ ajax.onreadystatechange = function () {
 
 ajax.open("GET", " https://reqres.in/api/unknown", true);
 ajax.send();
+}
 
 function openPage()
 {
-   location.replace("../index.html")
+   location.replace("../index.html");
+   removeCookie();
 }
 
 

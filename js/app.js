@@ -18,6 +18,7 @@ function login() {
              Cookies.set("usertoken", tokenObject.token);
 
             window.open("home.html", "_self");
+           
         }
         else if (this.readyState != 4) {
             document.getElementById("login-status").innerHTML = "Loading.."
@@ -35,3 +36,4 @@ function login() {
 
 
 document.getElementById("login-submit").addEventListener("click", login);
+
